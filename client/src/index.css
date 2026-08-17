@@ -1,166 +1,165 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&family=Poppins:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Pacifico&display=swap');
+/* ── Google Fonts ──────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ── Base reset & tokens ──────────────────────────────────────────────── */
 @layer base {
-  * {
+  *, *::before, *::after {
     box-sizing: border-box;
   }
-  body {
-    font-family: 'Inter', sans-serif;
-    background-color: #0d0d0d;
-    color: #ffffff;
+
+  html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #FAFAFA;
+    color: #111827;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Monospace numerics feel precise in a medical context */
+  .font-data {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-feature-settings: 'tnum' 1; /* tabular numbers */
   }
 }
 
+/* ── Scrollbar — thin clinical style ─────────────────────────────────── */
+::-webkit-scrollbar            { width: 5px; height: 5px; }
+::-webkit-scrollbar-track      { background: #F3F4F6; }
+::-webkit-scrollbar-thumb      { background: #D1D5DB; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover{ background: #9CA3AF; }
+
+/* ── Utility components ──────────────────────────────────────────────── */
 @layer components {
-  .btn-gold {
-    @apply bg-[#E0A526] text-black font-semibold uppercase tracking-[0.08em] text-sm px-8 py-3 transition-all duration-200 hover:bg-[#F5C55A] hover:shadow-[0_0_20px_rgba(224,165,38,0.4)] active:scale-95 cursor-pointer;
+
+  /* ── Card ── */
+  .card {
+    @apply bg-white border border-clinical-border rounded-card shadow-card;
   }
-  .btn-outline-white {
-    @apply border border-white text-white font-semibold uppercase tracking-[0.08em] text-sm px-8 py-3 transition-all duration-200 hover:bg-white hover:text-black active:scale-95 cursor-pointer;
+  .card-hover {
+    @apply transition-shadow duration-200 hover:shadow-card-hover;
   }
-  .btn-outline-gold {
-    @apply border border-[#E0A526] text-[#E0A526] font-semibold uppercase tracking-[0.08em] text-sm px-8 py-3 transition-all duration-200 hover:bg-[#E0A526] hover:text-black active:scale-95 cursor-pointer;
+
+  /* ── Buttons ── */
+  .btn {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-btn text-sm font-medium
+           transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-offset-1
+           disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer;
   }
-  .gold-label {
-    @apply text-[#E0A526] uppercase tracking-[0.2em] text-xs font-semibold;
+  .btn-primary {
+    @apply btn bg-teal text-white hover:bg-teal-600 focus:ring-teal-300;
   }
-  .section-heading {
-    @apply text-3xl md:text-4xl font-black text-white leading-tight font-heading;
+  .btn-secondary {
+    @apply btn bg-navy text-white hover:bg-navy-600 focus:ring-navy-300;
   }
-  .section-heading-dark {
-    @apply text-3xl md:text-4xl font-black text-[#0d0d0d] leading-tight font-heading;
+  .btn-outline {
+    @apply btn border border-clinical-border text-clinical-secondary bg-white
+           hover:bg-clinical-subtle hover:border-clinical-muted focus:ring-teal-200;
   }
-  .btn-outline-dark {
-  @apply border border-[#0d0d0d] text-[#0d0d0d] font-semibold uppercase tracking-[0.08em] text-sm px-8 py-3 transition-all duration-200 hover:bg-[#0d0d0d] hover:text-white active:scale-95 cursor-pointer;
-}
+  .btn-ghost {
+    @apply btn text-clinical-muted hover:text-clinical-text hover:bg-clinical-subtle focus:ring-teal-200;
+  }
+  .btn-danger {
+    @apply btn bg-red-600 text-white hover:bg-red-700 focus:ring-red-300;
+  }
+  .btn-sm {
+    @apply px-3 py-1.5 text-xs;
+  }
+  .btn-lg {
+    @apply px-6 py-2.5 text-base;
+  }
+
+  /* ── Form inputs ── */
+  .input {
+    @apply block w-full px-3 py-2 border border-clinical-border rounded-input
+           text-sm text-clinical-text bg-white placeholder-clinical-muted
+           focus:outline-none focus:ring-2 focus:ring-teal-300 focus:border-teal
+           transition-colors duration-150;
+  }
+  .label {
+    @apply block text-xs font-medium text-clinical-secondary mb-1.5 uppercase tracking-wide;
+  }
+  .select {
+    @apply input appearance-none bg-no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-position: right 10px center;
+    padding-right: 2rem;
+  }
+
+  /* ── Badge ── */
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-teal     { @apply badge bg-teal-50 text-teal-700; }
+  .badge-navy     { @apply badge bg-navy-50 text-navy-700; }
+  .badge-accent   { @apply badge bg-accent-50 text-accent-600; }
+  .badge-muted    { @apply badge bg-clinical-subtle text-clinical-muted; }
+  .badge-success  { @apply badge bg-green-50 text-green-700; }
+  .badge-warning  { @apply badge bg-amber-50 text-amber-700; }
+  .badge-danger   { @apply badge bg-red-50 text-red-700; }
+
+  /* ── Table ── */
+  .table-clinical {
+    @apply w-full text-sm border-collapse;
+  }
+  .table-clinical thead tr {
+    @apply border-b border-clinical-border bg-clinical-subtle;
+  }
+  .table-clinical th {
+    @apply px-4 py-3 text-left text-xs font-semibold text-clinical-muted uppercase tracking-wide;
+  }
+  .table-clinical td {
+    @apply px-4 py-3 text-clinical-text border-b border-clinical-border;
+  }
+  .table-clinical tbody tr {
+    @apply hover:bg-clinical-subtle transition-colors duration-100;
+  }
+
+  /* ── Section heading ── */
+  .page-title {
+    @apply text-lg font-semibold text-clinical-text tracking-tight;
+  }
+  .section-title {
+    @apply text-sm font-semibold text-clinical-secondary uppercase tracking-wider;
+  }
+
+  /* ── Status dot ── */
+  .status-dot {
+    @apply inline-block w-2 h-2 rounded-full;
+  }
+
+  /* ── Sidebar nav item ── */
+  .nav-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium
+           transition-all duration-150 cursor-pointer select-none;
+  }
+  .nav-item-idle {
+    @apply nav-item text-navy-200 hover:text-white hover:bg-white/10;
+  }
+  .nav-item-active {
+    @apply nav-item text-white bg-white/15 border-l-2 border-teal-300;
+  }
 }
 
-/* ── Scrollbar ──────────────────────────────────────────── */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #0d0d0d; }
-::-webkit-scrollbar-thumb { background: #E0A526; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #F5C55A; }
-
-/* ── Product Card Hover ──────────────────────────────────── */
-.product-card {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  border-radius: 12px;
-}
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+/* ── Sidebar active indicator animation ─────────────────────────────── */
+.nav-item-active .nav-icon {
+  color: #5AABEE;
 }
 
-/* ── Category Card Overlay ──────────────────────────────── */
-.category-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.82) 35%, rgba(0,0,0,0.25) 70%, rgba(0,0,0,0.05) 100%);
-  transition: background 0.35s ease;
-  z-index: 1;
-}
-.category-card:hover::after {
-  background: linear-gradient(to top, rgba(0,0,0,0.88) 40%, rgba(0,0,0,0.35) 70%, rgba(0,0,0,0.1) 100%);
-}
-.category-card img {
-  transition: transform 0.5s ease;
-}
-.category-card:hover img {
-  transform: scale(1.05);
+/* ── Topbar ──────────────────────────────────────────────────────────── */
+.topbar {
+  border-bottom: 1px solid #E5E7EB;
 }
 
-/* ── Nav Link underline animation ───────────────────────── */
-.nav-link {
-  position: relative;
-}
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #E0A526;
-  transition: width 0.3s ease;
-}
-.nav-link:hover::after,
-.nav-link.active::after {
-  width: 100%;
-}
-
-/* ── Testimonial Carousel ───────────────────────────────── */
-.testimonial-track {
-  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-/* ── Floating WhatsApp ──────────────────────────────────── */
-.whatsapp-float {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  z-index: 9999;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: #25D366;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.whatsapp-float:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.55);
-}
-
-/* ── Gold shimmer for hero label ───────────────────────── */
-@keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-.gold-shimmer {
-  background: linear-gradient(90deg, #E0A526 25%, #F5C55A 50%, #E0A526 75%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shimmer 3s linear infinite;
-}
-
-/* ── Smooth image zoom ──────────────────────────────────── */
-.img-zoom {
-  transition: transform 0.5s ease;
-}
-.img-zoom:hover {
-  transform: scale(1.04);
-}
-
-/* ── Glass card ─────────────────────────────────────────── */
-.glass {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-/* ── Leeds script logo ──────────────────────────────────── */
-.leeds-logo {
-  font-family: 'Pacifico', 'Brush Script MT', cursive;
-  color: #E0A526;
-  letter-spacing: 0.02em;
-  line-height: 1;
-}
-
-.btn-outline-dark {
-  @apply border border-[#0d0d0d] text-[#0d0d0d] font-semibold uppercase tracking-[0.08em] text-sm px-8 py-3 transition-all duration-200 hover:bg-[#0d0d0d] hover:text-white active:scale-95 cursor-pointer;
+/* ── Subtle teal gradient for sidebar top ────────────────────────────── */
+.sidebar-gradient {
+  background: linear-gradient(180deg, #1A3F70 0%, #1F3864 100%);
 }
