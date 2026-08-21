@@ -1,0 +1,11 @@
+{
+  "half_a_watertight": true,
+  "half_b_watertight": true,
+  "total_volume_mm3": 134489.5,
+  "estimated_material_grams": 166.8,
+  "estimated_print_time_minutes": 168.1,
+  "output_files": [
+    "output_stl\\cast_half_A.stl",
+    "output_stl\\cast_half_B.stl"
+  ]
+}

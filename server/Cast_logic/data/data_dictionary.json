@@ -1,0 +1,12 @@
+{
+  "age": "Uniformly sampled 5-85 (ASSUMPTION - adjust range to your target clinic population)",
+  "gender": "Randomly assigned M/F, 50/50",
+  "height_cm": "Sampled from age+gender-conditioned normal distribution, see COEFFS['height_cm']",
+  "hand_length_mm": "DERIVED from height via regression, see COEFFS['hand_length_regression']",
+  "wrist_width_mm": "DERIVED from hand_length via published ratio chain, see COEFFS['hand_ratios']",
+  "foot_length_mm": "DERIVED from height via published ratio, see COEFFS['foot_length_of_height']",
+  "ankle_circumference_mm": "DERIVED from foot_length, see COEFFS['ankle_circumference_of_foot_length']",
+  "cast_inner_diameter_mm": "LABEL - base measurement + clinical clearance + swelling allowance, see COEFFS['clearance_mm'] and COEFFS['swelling_stage_extra_mm']",
+  "wall_thickness_mm": "LABEL - from COEFFS['clearance_mm'][bracket]['wall_thickness']",
+  "cast_length_mm": "LABEL - proportional to palm_length or foot_length depending on injury_region"
+}
