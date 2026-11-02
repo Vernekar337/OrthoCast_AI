@@ -4,10 +4,10 @@ import Sidebar from './Sidebar';
 import Topbar from './Topbar';
 
 /**
- * AppLayout — persistent shell for all authenticated/app views.
+ * AppLayout — Persistent shell for all clinical views.
  *
  * ┌─────────────────────────────────────────────┐
- * │  Sidebar (240px fixed)  │  Topbar (h-14)    │
+ * │  Sidebar (256px fixed)  │  Topbar (h-14)    │
  * │                         ├───────────────────│
  * │                         │  <Outlet />       │
  * │                         │  (scrollable)     │
@@ -15,7 +15,7 @@ import Topbar from './Topbar';
  */
 export default function AppLayout() {
   return (
-    <div className="flex h-screen overflow-hidden bg-clinical-bg">
+    <div className="flex h-screen overflow-hidden bg-[#070D1B] text-slate-100 bg-grid-tech">
       {/* Fixed sidebar */}
       <Sidebar />
 
@@ -27,7 +27,7 @@ export default function AppLayout() {
         {/* Page content — scrollable */}
         <main
           id="main-content"
-          className="flex-1 overflow-y-auto p-6 animate-fade-in"
+          className="flex-1 overflow-y-auto p-6 md:p-8 animate-fade-in"
         >
           <Outlet />
         </main>

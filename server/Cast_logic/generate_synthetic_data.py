@@ -29,7 +29,7 @@ COEFFS = {
 
     
     "hand_ratios": {
-        "hand_breadth_of_length": (0.45, 0.02),      # mean, sd  
+        "hand_breadth_of_length": (0.45, 0.02),      
         "palm_length_of_hand_length": (0.55, 0.02),  
         "wrist_width_of_hand_breadth": (0.72, 0.03), 
         "finger_length_of_hand_length": {
@@ -51,7 +51,7 @@ COEFFS = {
         "elderly_60_plus": {"clearance": 5.0, "wall_thickness": 4.0, "source": "ASSUMPTION - elderly skin fragility considerations"},
     },
     "swelling_stage_extra_mm": {
-        "acute": 3.0,      # Paper 4
+        "acute": 3.0,      
         "subacute": 1.0,
         "none": 0.0,
     },
@@ -70,7 +70,7 @@ def age_bracket(age):
 
 
 def generate_patient():
-    # demographics 
+    
     age = int(RNG.integers(5, 85))
     gender = RNG.choice(["M", "F"])
     bracket = age_bracket(age)

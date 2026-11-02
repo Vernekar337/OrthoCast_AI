@@ -1,0 +1,11 @@
+{
+  "half_a_watertight": true,
+  "half_b_watertight": true,
+  "total_volume_mm3": 86302.9,
+  "estimated_material_grams": 107.0,
+  "estimated_print_time_minutes": 107.9,
+  "output_files": [
+    "C:\\Users\\Sahil Vernekar\\Documents\\OrthoCast_AI\\server\\storage\\casts\\cast_4df817091e3a\\cast_half_A.stl",
+    "C:\\Users\\Sahil Vernekar\\Documents\\OrthoCast_AI\\server\\storage\\casts\\cast_4df817091e3a\\cast_half_B.stl"
+  ]
+}

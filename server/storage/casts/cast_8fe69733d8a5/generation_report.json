@@ -1,0 +1,219 @@
+{
+  "cast_id": "cast_8fe69733d8a5",
+  "status": "prototype_generated",
+  "region": "wrist",
+  "units": "mm",
+  "parameters": {
+    "station_diameters_mm": [
+      58.2,
+      71.4,
+      84.0
+    ],
+    "total_length_mm": 160.0,
+    "wall_thickness_mm": 4.3,
+    "vent": {
+      "enabled": false,
+      "hole_mm": 6.0,
+      "spacing_mm": 18.0
+    },
+    "tabs_requested": 0
+  },
+  "cross_sections": [
+    {
+      "position_mm": 0.0,
+      "diameter_mm": 58.2
+    },
+    {
+      "position_mm": 5.0,
+      "diameter_mm": 59.0
+    },
+    {
+      "position_mm": 10.0,
+      "diameter_mm": 59.9
+    },
+    {
+      "position_mm": 15.0,
+      "diameter_mm": 60.7
+    },
+    {
+      "position_mm": 20.0,
+      "diameter_mm": 61.5
+    },
+    {
+      "position_mm": 25.0,
+      "diameter_mm": 62.3
+    },
+    {
+      "position_mm": 30.0,
+      "diameter_mm": 63.2
+    },
+    {
+      "position_mm": 35.0,
+      "diameter_mm": 64.0
+    },
+    {
+      "position_mm": 40.0,
+      "diameter_mm": 64.8
+    },
+    {
+      "position_mm": 45.0,
+      "diameter_mm": 65.6
+    },
+    {
+      "position_mm": 50.0,
+      "diameter_mm": 66.5
+    },
+    {
+      "position_mm": 55.0,
+      "diameter_mm": 67.3
+    },
+    {
+      "position_mm": 60.0,
+      "diameter_mm": 68.1
+    },
+    {
+      "position_mm": 65.0,
+      "diameter_mm": 68.9
+    },
+    {
+      "position_mm": 70.0,
+      "diameter_mm": 69.8
+    },
+    {
+      "position_mm": 75.0,
+      "diameter_mm": 70.6
+    },
+    {
+      "position_mm": 80.0,
+      "diameter_mm": 71.4
+    },
+    {
+      "position_mm": 85.0,
+      "diameter_mm": 72.2
+    },
+    {
+      "position_mm": 90.0,
+      "diameter_mm": 73.0
+    },
+    {
+      "position_mm": 95.0,
+      "diameter_mm": 73.8
+    },
+    {
+      "position_mm": 100.0,
+      "diameter_mm": 74.6
+    },
+    {
+      "position_mm": 105.0,
+      "diameter_mm": 75.3
+    },
+    {
+      "position_mm": 110.0,
+      "diameter_mm": 76.1
+    },
+    {
+      "position_mm": 115.0,
+      "diameter_mm": 76.9
+    },
+    {
+      "position_mm": 120.0,
+      "diameter_mm": 77.7
+    },
+    {
+      "position_mm": 125.0,
+      "diameter_mm": 78.5
+    },
+    {
+      "position_mm": 130.0,
+      "diameter_mm": 79.3
+    },
+    {
+      "position_mm": 135.0,
+      "diameter_mm": 80.1
+    },
+    {
+      "position_mm": 140.0,
+      "diameter_mm": 80.8
+    },
+    {
+      "position_mm": 145.0,
+      "diameter_mm": 81.6
+    },
+    {
+      "position_mm": 150.0,
+      "diameter_mm": 82.4
+    },
+    {
+      "position_mm": 155.0,
+      "diameter_mm": 83.2
+    },
+    {
+      "position_mm": 160.0,
+      "diameter_mm": 84.0
+    }
+  ],
+  "mesh_checks": {
+    "cast_half_A.stl": {
+      "vertices": 1650,
+      "faces": 3296,
+      "watertight": true,
+      "winding_consistent": true,
+      "bounds_mm": [
+        [
+          -42.0,
+          0.0,
+          0.0
+        ],
+        [
+          42.0,
+          42.0,
+          160.0
+        ]
+      ],
+      "volume_mm3": 72153.68
+    },
+    "cast_half_B.stl": {
+      "vertices": 1650,
+      "faces": 3296,
+      "watertight": true,
+      "winding_consistent": true,
+      "bounds_mm": [
+        [
+          -42.0,
+          -42.0,
+          0.0
+        ],
+        [
+          42.0,
+          5.143516516159909e-15,
+          160.0
+        ]
+      ],
+      "volume_mm3": 72153.68
+    }
+  },
+  "generation_summary": {
+    "half_a_watertight": true,
+    "half_b_watertight": true,
+    "total_volume_mm3": 144307.4,
+    "estimated_material_grams": 178.9,
+    "estimated_print_time_minutes": 180.4,
+    "output_files": [
+      "C:\\Users\\Sahil Vernekar\\Documents\\OrthoCast_AI\\server\\storage\\casts\\cast_8fe69733d8a5\\cast_half_A.stl",
+      "C:\\Users\\Sahil Vernekar\\Documents\\OrthoCast_AI\\server\\storage\\casts\\cast_8fe69733d8a5\\cast_half_B.stl"
+    ]
+  },
+  "output_files": {
+    "half_a_stl": "C:\\Users\\Sahil Vernekar\\Documents\\OrthoCast_AI\\server\\storage\\casts\\cast_8fe69733d8a5\\cast_half_A.stl",
+    "half_b_stl": "C:\\Users\\Sahil Vernekar\\Documents\\OrthoCast_AI\\server\\storage\\casts\\cast_8fe69733d8a5\\cast_half_B.stl",
+    "summary_json": "C:\\Users\\Sahil Vernekar\\Documents\\OrthoCast_AI\\server\\storage\\casts\\cast_8fe69733d8a5\\summary.json",
+    "generation_report_json": "C:\\Users\\Sahil Vernekar\\Documents\\OrthoCast_AI\\server\\storage\\casts\\cast_8fe69733d8a5\\generation_report.json",
+    "report_pdf": "C:\\Users\\Sahil Vernekar\\Documents\\OrthoCast_AI\\server\\storage\\casts\\cast_8fe69733d8a5\\generation_report.pdf"
+  },
+  "warnings": [
+    "Prototype geometry only; not approved for patient use.",
+    "Mesh checks do not establish structural strength, fit, biocompatibility, or clinical safety.",
+    "Existing CAD closure tabs are prototype geometry; the requested tab count is not yet configurable in the CAD engine.",
+    "Material and print-time figures from the legacy generator are estimates, not slicer-verified results."
+  ]
+}

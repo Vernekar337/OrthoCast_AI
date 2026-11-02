@@ -1,4 +1,4 @@
-
+﻿
 
 import numpy as np
 import trimesh
@@ -196,8 +196,11 @@ def add_closure_tabs(half_mesh, cross_sections, tab_width_mm=12, tab_thickness_m
         tab = trimesh.creation.box(extents=[8, tab_width_mm, tab_thickness_mm])
         tab.apply_translation([r + 2, 0, z])
         tabs.append(tab)
-    combined = trimesh.boolean.union([half_mesh] + tabs)
-    return combined
+    try:
+        combined = trimesh.boolean.union([half_mesh] + tabs)
+        return combined
+    except Exception:
+        return trimesh.util.concatenate([half_mesh] + tabs)
 
 
 
@@ -269,3 +272,4 @@ if __name__ == "__main__":
         "ventilation_spacing_mm": 18.0,
     }
     generate_cast(example_prediction)
+

@@ -1,0 +1,167 @@
+{
+  "trained_at": "2026-10-12 14:46:12",
+  "xgboost_version": "3.2.0",
+  "n_rows": 8000,
+  "source": "synthetic literature-anchored (rule-based labels)",
+  "interval_method": "split-conformal 95% (calibration residual quantile)",
+  "regions": {
+    "wrist": {
+      "features": [
+        "age",
+        "gender_m",
+        "wrist_width_mm",
+        "palm_length_mm",
+        "hand_length_mm",
+        "swelling_idx"
+      ],
+      "ranges": {
+        "age": [
+          5.0,
+          85.0
+        ],
+        "gender_m": [
+          0.0,
+          1.0
+        ],
+        "wrist_width_mm": [
+          27.02,
+          71.13
+        ],
+        "palm_length_mm": [
+          47.19,
+          122.17
+        ],
+        "hand_length_mm": [
+          95.09,
+          214.43
+        ],
+        "swelling_idx": [
+          0.0,
+          2.0
+        ]
+      },
+      "targets": {
+        "d1_mm": {
+          "mae": 0.34220121714274093,
+          "rmse": 0.44147979887119704,
+          "r2": 0.9947707429746276,
+          "interval_95_halfwidth": 0.8932279499053966,
+          "coverage_95": 0.9533333333333334
+        },
+        "d2_mm": {
+          "mae": 1.3369082668304442,
+          "rmse": 1.6745509465865682,
+          "r2": 0.9534119641720717,
+          "interval_95_halfwidth": 3.1463350972493522,
+          "coverage_95": 0.9383333333333334
+        },
+        "d3_mm": {
+          "mae": 1.324728073883057,
+          "rmse": 1.6809394028927551,
+          "r2": 0.9650125775449635,
+          "interval_95_halfwidth": 3.2283471984863232,
+          "coverage_95": 0.935
+        },
+        "wall_mm": {
+          "mae": 0.12431567991574606,
+          "rmse": 0.1553617454666211,
+          "r2": 0.9328000914314326,
+          "interval_95_halfwidth": 0.3057274801254269,
+          "coverage_95": 0.9525
+        },
+        "length_mm": {
+          "mae": 4.891002527364094,
+          "rmse": 6.210261823569694,
+          "r2": 0.9593412764293239,
+          "interval_95_halfwidth": 11.777891038004569,
+          "coverage_95": 0.9316666666666666
+        }
+      },
+      "importance": {
+        "age": 0.1907049601787639,
+        "gender_m": 0.010053753255310018,
+        "wrist_width_mm": 0.4496805899618795,
+        "palm_length_mm": 0.027199243905880292,
+        "hand_length_mm": 0.2696353271102465,
+        "swelling_idx": 0.05272612558791967
+      },
+      "n_test": 1200
+    },
+    "ankle": {
+      "features": [
+        "age",
+        "gender_m",
+        "foot_length_mm",
+        "ankle_circumference_mm",
+        "swelling_idx"
+      ],
+      "ranges": {
+        "age": [
+          5.0,
+          85.0
+        ],
+        "gender_m": [
+          0.0,
+          1.0
+        ],
+        "foot_length_mm": [
+          132.52,
+          311.08
+        ],
+        "ankle_circumference_mm": [
+          109.36,
+          312.24
+        ],
+        "swelling_idx": [
+          0.0,
+          2.0
+        ]
+      },
+      "targets": {
+        "d1_mm": {
+          "mae": 0.37290578193664536,
+          "rmse": 0.4974957779740243,
+          "r2": 0.9960454885085152,
+          "interval_95_halfwidth": 0.8947942072550441,
+          "coverage_95": 0.9391666666666667
+        },
+        "d2_mm": {
+          "mae": 1.7487805335998534,
+          "rmse": 2.2308851692530007,
+          "r2": 0.9537103287472786,
+          "interval_95_halfwidth": 4.4937366483052505,
+          "coverage_95": 0.9541666666666667
+        },
+        "d3_mm": {
+          "mae": 1.7622647244771323,
+          "rmse": 2.2497880552716802,
+          "r2": 0.9666235752944919,
+          "interval_95_halfwidth": 4.343781272888189,
+          "coverage_95": 0.9433333333333334
+        },
+        "wall_mm": {
+          "mae": 0.12489926180839538,
+          "rmse": 0.15668552240121228,
+          "r2": 0.9287885844300714,
+          "interval_95_halfwidth": 0.2953275914033252,
+          "coverage_95": 0.9366666666666666
+        },
+        "length_mm": {
+          "mae": 4.832622162882488,
+          "rmse": 6.112042719556049,
+          "r2": 0.9592787123364717,
+          "interval_95_halfwidth": 12.120919113667808,
+          "coverage_95": 0.9516666666666667
+        }
+      },
+      "importance": {
+        "age": 0.18495920853352868,
+        "gender_m": 0.01095763818301601,
+        "foot_length_mm": 0.300344304664108,
+        "ankle_circumference_mm": 0.4720558038257286,
+        "swelling_idx": 0.031683044793618664
+      },
+      "n_test": 1200
+    }
+  }
+}
